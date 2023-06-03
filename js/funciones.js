@@ -48,17 +48,34 @@ function getData(event) {
 
 boton.addEventListener('click', getData)
 
+//funcion para eliminar las tareas 
+function eliminarTarea(idTarea) {
+    const contenido = listaTareas.findIndex(tarea => tarea.idTarea === idTarea);
+    if (contenido !== -1) {
+        listaTareas.splice(contenido, 1);
+        sectionTareas.innerHTML = "";
+        printAllTareas(listaTareas, sectionTareas)
+    }
+}
+
 //para pintar las tareas
 const sectionTareas = document.querySelector('#sectionTareas')
 
-
 function printOneTarea(pTarea, pDom) {
     const ul = document.createElement('ul');
-    ul.innerHTML = `<li>${pTarea.titulo}<p>${pTarea.prioridad}</p></li>`
+    const li = document.createElement('li');
+    li.textContent = pTarea.titulo;
+    const button = document.createElement('button');
+    button.textContent = 'Eliminar';
+    button.className = "btn btn-success btn-sm"
 
-    sectionTareas.appendChild(ul)
-    pDom.appendChild(ul)
+    button.addEventListener('click', function () {
+        eliminarTarea(pTarea.idTarea);
+    });
 
+    li.appendChild(button);
+    ul.appendChild(li);
+    pDom.appendChild(ul);
 }
 
 function printAllTareas(pList, pDom) {
