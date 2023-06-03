@@ -43,7 +43,9 @@ function getData(event) {
         alert(guardado);
 
     }
-
+    //para que se quede vacio el input despues de guardar la tarea
+    añadirTarea.value = "";
+    añadirPrioridad.value = "";
 }
 
 boton.addEventListener('click', getData)
