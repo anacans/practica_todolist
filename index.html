@@ -36,16 +36,15 @@
 
             <div id="buscador" class="input-group mb-3">
 
-                <input type="text" class="form-control">
+                <input id="buscarTarea" type="text" placeholder="Qué tarea quieres buscar" class="form-control">
 
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button"
-                    data-bs-toggle="dropdown">Prioridad</button>
+                <select id="filtroPrioridad" class="input-group-text">
+                    <option value="">Prioridad</option>
+                    <option value="urgente">Urgente</option>
+                    <option value="diaria">Diaria</option>
+                    <option value="mensual">Mensual</option>
+                </select>
 
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#">Urgente</a></li>
-                    <li><a class="dropdown-item" href="#">Diaria</a></li>
-                    <li><a class="dropdown-item" href="#">Mensual</a></li>
-                </ul>
 
             </div>
 
@@ -57,13 +56,13 @@
                     <li class="list-group-item">Cosa que hacer 4 <button class="btn btn-success">Eliminar</button></li>
                 </ul> -->
             </section>
-    </div>
 
-    </main>
 
-    <footer class="p-3 mb-2 bg-success text-white">
-        &copy; Ana Cáceres - 2023
-    </footer>
+        </main>
+
+        <footer class="p-3 mb-2 bg-success text-white">
+            &copy; Ana Cáceres - 2023
+        </footer>
     </div>
 
 

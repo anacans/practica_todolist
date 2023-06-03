@@ -1,7 +1,7 @@
 const añadirTarea = document.querySelector('#tarea');
 const añadirPrioridad = document.querySelector('#prioridad');
 const boton = document.querySelector('#boton');
-let id = 1;
+let id = 4;
 
 
 //para guardar una tarea en el array
@@ -28,7 +28,7 @@ function getData(event) {
         return;
     }
 
-    newTarea = {
+    const newTarea = {
         idTarea: id,
         titulo: añadirTarea.value,
         prioridad: añadirPrioridad.value
@@ -62,7 +62,27 @@ function printOneTarea(pTarea, pDom) {
 }
 
 function printAllTareas(pList, pDom) {
+    pDom.innerHTML = "";
     pList.forEach(tarea => printOneTarea(tarea, pDom))
 }
 
 printAllTareas(listaTareas, sectionTareas)
+
+//para filtrar por prioridad necesitamos capturar el selector de prioridad, recoger su valor, filtrar el array, para luego pintar
+
+const selectPrioridad = document.querySelector('#filtroPrioridad');
+
+function filterByPrioridad(pListaTareas, pPrioridad) {
+    if (pPrioridad === '') {
+        return pListaTareas; // Si no se selecciona ninguna prioridad, retornar la lista completa
+    }
+    return pListaTareas.filter(tarea => tarea.prioridad === pPrioridad);
+}
+
+function getPrioridad(event) {
+    let listaFiltrada = filterByPrioridad(listaTareas, event.target.value);
+    printAllTareas(listaFiltrada, sectionTareas)
+}
+
+selectPrioridad.addEventListener('change', getPrioridad);
+
