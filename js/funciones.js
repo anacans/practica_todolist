@@ -63,11 +63,24 @@ const sectionTareas = document.querySelector('#sectionTareas')
 
 function printOneTarea(pTarea, pDom) {
     const ul = document.createElement('ul');
+    ul.className = "list-group"
     const li = document.createElement('li');
+    li.className = "list-group-item"
+
     li.textContent = pTarea.titulo;
     const button = document.createElement('button');
     button.textContent = 'Eliminar';
     button.className = "btn btn-success btn-sm"
+
+    //Aquí voy a asignar clase al boton en funcion de la prioridad
+    if (pTarea.prioridad === 'urgente') {
+        button.className = 'btn btn-outline-danger';
+    } else if (pTarea.prioridad === 'diaria') {
+        button.className = 'btn btn-outline-success';
+    } else if (pTarea.prioridad === 'mensual') {
+        button.className = 'btn btn-outline-primary';
+    }
+    //
 
     button.addEventListener('click', function () {
         eliminarTarea(pTarea.idTarea);
