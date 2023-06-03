@@ -86,3 +86,18 @@ function getPrioridad(event) {
 
 selectPrioridad.addEventListener('change', getPrioridad);
 
+//capturar el valor el input de buscarTarea, recogemos su valor, filtramos por tarea y pintamos
+
+const buscarTarea = document.querySelector('#buscarTarea')
+
+function filterByWord(pList, pWord) {
+    return pList.filter(tarea => tarea.titulo.toLowerCase().includes(pWord.toLowerCase()));
+}
+
+function getTarea(event) {
+    let palabraBuscar = (event.target.value); // palabra recogida del evento
+    let listaFiltrada = filterByWord(listaTareas, palabraBuscar);
+    printAllTareas(listaFiltrada, sectionTareas)
+}
+
+buscarTarea.addEventListener('input', getTarea)
