@@ -65,7 +65,7 @@ function printOneTarea(pTarea, pDom) {
     const ul = document.createElement('ul');
     ul.className = "list-group"
     const li = document.createElement('li');
-    li.className = "list-group-item"
+    li.className = "list-group-item d-flex justify-content-between"
 
     li.textContent = pTarea.titulo;
     const button = document.createElement('button');
