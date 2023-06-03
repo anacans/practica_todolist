@@ -1,15 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To do list</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/data.js"></script>
 </head>
 
 <body>
+    <div class="container">
+        <header class="p-3 mb-2 bg-success text-white">
+            <h1>To do list</h1>
+        </header>
 
+        <main class="p-3 mb-2 bg-success-subtle text-emphasis-success">
+
+            <div id="añadirTarea" class="input-group mb-3">
+                <input id="tarea" type="text" placeholder="Añadir tarea" class="form-control">
+                <select id="prioridad" class="input-group-text">
+                    <option value="">Selecciona la prioridad</option>
+                    <option value="urgente">Urgente</option>
+                    <option value="diaria">Diaria</option>
+                    <option value="mensual">Mensual</option>
+                </select>
+
+                <button id="boton" type="button" class="form-control">Guardar</button>
+
+            </div>
+
+
+            <div id="buscador" class="input-group mb-3">
+
+                <input type="text" class="form-control">
+
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                    data-bs-toggle="dropdown">Prioridad</button>
+
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Urgente</a></li>
+                    <li><a class="dropdown-item" href="#">Diaria</a></li>
+                    <li><a class="dropdown-item" href="#">Mensual</a></li>
+                </ul>
+
+            </div>
+
+            <section id="sectionTareas">
+                <!--  <ul class="list-group mt-2">
+                    <li class="list-group-item">Cosa que hacer 1 <button class="btn btn-success">Eliminar</button></li>
+                    <li class="list-group-item">Cosa que hacer 2 <button class="btn btn-success">Eliminar</button></li>
+                    <li class="list-group-item">Cosa que hacer 3 <button class="btn btn-success">Eliminar</button></li>
+                    <li class="list-group-item">Cosa que hacer 4 <button class="btn btn-success">Eliminar</button></li>
+                </ul> -->
+            </section>
+    </div>
+
+    </main>
+
+    <footer class="p-3 mb-2 bg-success text-white">
+        &copy; Ana Cáceres - 2023
+    </footer>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="./js/funciones.js"></script>
 </body>
 
 </html>
