@@ -11,6 +11,9 @@ function mostrarMensaje(pMensaje) {
     mensajeDiv.style.display = 'block';
 }
 
+function ocultarMensaje() {
+    mensajeDiv.style.display = 'none';
+}
 
 //para guardar una tarea en el array
 function saveTarea(pList, pTarea) {
@@ -35,6 +38,8 @@ function getData(event) {
         mostrarMensaje('Los campos no pueden estar vacíos');
         return;
     }
+
+    ocultarMensaje()
 
     const newTarea = {
         idTarea: id,
