@@ -107,8 +107,13 @@ function printOneTarea(pTarea, pDom) {
 }
 
 function printAllTareas(pList, pDom) {
-    pDom.innerHTML = "";
-    pList.forEach(tarea => printOneTarea(tarea, pDom))
+    if (listaTareas.length >= 1) {
+        pDom.innerHTML = "";
+        pList.forEach(tarea => printOneTarea(tarea, pDom))
+    } else {
+        mostrarMensaje('¡Enhorabuena! Has terminado todas las tareas')
+    }
+
 }
 
 printAllTareas(listaTareas, sectionTareas)
