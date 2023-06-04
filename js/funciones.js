@@ -145,9 +145,13 @@ function filterByWord(pList, pWord) {
 }
 
 function getTarea(event) {
-    let palabraBuscar = (event.target.value); // palabra recogida del evento
-    let listaFiltrada = filterByWord(listaTareas, palabraBuscar);
-    printAllTareas(listaFiltrada, sectionTareas)
+    if (event.key === 'Enter') {
+        let palabraBuscar = (event.target.value.toLowerCase()); // palabra recogida del evento
+        let listaFiltrada = filterByWord(listaTareas, palabraBuscar);
+        printAllTareas(listaFiltrada, sectionTareas)
+
+    }
+
 }
 
-buscarTarea.addEventListener('input', getTarea)
+buscarTarea.addEventListener('keypress', getTarea)
