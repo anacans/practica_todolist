@@ -3,6 +3,14 @@ const añadirPrioridad = document.querySelector('#prioridad');
 const boton = document.querySelector('#boton');
 let id = 4;
 
+//funcion para mostrar mensajes por pantalla
+const mensajeDiv = document.getElementById('mensaje');
+
+function mostrarMensaje(pMensaje) {
+    mensajeDiv.textContent = pMensaje;
+    mensajeDiv.style.display = 'block';
+}
+
 
 //para guardar una tarea en el array
 function saveTarea(pList, pTarea) {
@@ -24,7 +32,7 @@ function getData(event) {
     const prioridad = añadirPrioridad.value;
 
     if (titulo === '' || prioridad === '') {
-        alert('Los campos no pueden estar vacíos');
+        mostrarMensaje('Los campos no pueden estar vacíos');
         return;
     }
 
